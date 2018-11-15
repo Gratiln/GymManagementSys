@@ -1,0 +1,159 @@
+package GymManagement;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import javax.swing.JDialog;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+
+public class Panel extends JFrame {
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Panel frame = new Panel();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Panel() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JButton btnAddMember = new JButton("Add Member");
+		btnAddMember.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AddMember addmember = new AddMember();
+				addmember.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+				addmember.setVisible(true);
+				dispose();
+			}
+		});
+		btnAddMember.setBounds(24, 91, 173, 23);
+		contentPane.add(btnAddMember);
+		
+		JButton btnEditMember = new JButton("Edit Member");
+		btnEditMember.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				EditMember emember = new EditMember();
+				emember.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+				emember.setVisible(true);
+				dispose();
+			}
+		});
+		btnEditMember.setBounds(24, 125, 173, 23);
+		contentPane.add(btnEditMember);
+		
+		JButton btnSerachMember = new JButton("Search Member");
+		btnSerachMember.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				SrcMember searchm = new SrcMember();
+				searchm.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+				searchm.setVisible(true);
+				dispose();				
+			}
+		});
+		btnSerachMember.setBounds(24, 159, 173, 23);
+		contentPane.add(btnSerachMember);
+		
+		JButton btnInventoryManagement = new JButton("Inventory Management");
+		btnInventoryManagement.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				InvManagement invmanagement = new InvManagement();
+				invmanagement.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+				invmanagement.setVisible(true);
+				dispose();
+			}
+		});
+		btnInventoryManagement.setBounds(24, 193, 173, 23);
+		contentPane.add(btnInventoryManagement);
+		
+		JButton btnCreateWorkoutPlan = new JButton("Create Workout Plan");
+		btnCreateWorkoutPlan.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CreateWorkoutPlan cworkoutplan = new CreateWorkoutPlan();
+				cworkoutplan.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+				cworkoutplan.setVisible(true);
+				dispose();
+			}
+		});
+		btnCreateWorkoutPlan.setBounds(231, 91, 173, 23);
+		contentPane.add(btnCreateWorkoutPlan);
+		
+		JButton btnUpdateWorkoutPlan = new JButton("Update Workout Plan");
+		btnUpdateWorkoutPlan.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				UpdateWorkoutPlan uworkoutplan = new UpdateWorkoutPlan();
+				uworkoutplan.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+				uworkoutplan.setVisible(true);
+				dispose();
+			}
+		});
+		btnUpdateWorkoutPlan.setBounds(231, 125, 173, 23);
+		contentPane.add(btnUpdateWorkoutPlan);
+		
+		JButton btnSmt = new JButton("Smt");
+		btnSmt.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				smt smt1 = new smt();
+				smt1.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+				smt1.setVisible(true);			
+			}
+		});
+		btnSmt.setBounds(231, 159, 173, 23);
+		contentPane.add(btnSmt);
+		
+		JButton btnSmt2 = new JButton("Smt2");
+		btnSmt2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				smtt smt2 = new smtt();
+				smt2.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+				smt2.setVisible(true);
+			}
+		});
+		btnSmt2.setBounds(231, 193, 173, 23);
+		contentPane.add(btnSmt2);
+		
+		JLabel lblGymManagementSystem = new JLabel("Gym Management System");
+		lblGymManagementSystem.setHorizontalAlignment(SwingConstants.CENTER);
+		lblGymManagementSystem.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		lblGymManagementSystem.setBounds(20, 33, 384, 23);
+		contentPane.add(lblGymManagementSystem);
+		
+		JButton btnExit = new JButton("Exit");
+		btnExit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
+		btnExit.setBounds(24, 227, 380, 23);
+		contentPane.add(btnExit);
+	}
+
+}
